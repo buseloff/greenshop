@@ -2,9 +2,6 @@
 
 # dependencies
 /node_modules
-/backend/.idea
-/backend/target
-/backend/db.properties
 /.pnp
 .pnp.js
 
