@@ -4,7 +4,7 @@ USE shop_db;
 CREATE TABLE categories (
   id SERIAL NOT NULL,
   title varchar(32),
-  PRIMARY KEY (id), 
+  PRIMARY KEY (id) 
 );
 
 
@@ -14,9 +14,9 @@ CREATE TABLE products (
   image_url varchar(256),
   price numeric(10,2), 
   quantity numeric(10,2),
-  category int,  
+  category_id int,  
   PRIMARY KEY (id), 
-  FOREIGN KEY (category) REFERENCES categories(id));
+  FOREIGN KEY (category_id) REFERENCES categories(id));
 
 INSERT INTO categories (title)
 VALUES
@@ -26,18 +26,18 @@ VALUES
 	('Cereals'),
 	('Spices');
 
-INSERT INTO products (name, image_url, price, quantity, category)
+INSERT INTO products (name, image_url, price, quantity, category_id)
 VALUES
 	('Blueberry', '../../assets/img/berries/blueberries.jpg', 8, 10, 1),
 	('Strawberry', '../../assets/img/berries/strawberries.jpg', 5, 10, 1),
 	('Raspberry', '../../assets/img/berries/raspberries.jpg', 7, 10, 1),
 	('Blackberry', '../../assets/img/berries/blackberries.jpg', 6, 10, 1),
-	('Red Currants', '../../assets/img/berries/redcurrants.jpg', 8, 10, 1),
-	('White Currants', '../../assets/img/berries/whitecurrants.jpg', 9, 10, 1),
+	('Red_Currants', '../../assets/img/berries/redcurrants.jpg', 8, 10, 1),
+	('White_Currants', '../../assets/img/berries/whitecurrants.jpg', 9, 10, 1),
 	('Blackcurrants', '../../assets/img/berries/blackcurrants.jpg', 8, 10, 1),
 	('Cranberry', '../../assets/img/berries/cranberries.jpg', 12, 10, 1),
 	('Gooseberry', '../../assets/img/berries/gooseberry.jpg', 10, 10, 1),
-	('Brussels Sprouts', '../../assets/img/vegetables/brusselssprouts.jpg', 10, 10, 2),
+	('Brussels_Sprouts', '../../assets/img/vegetables/brusselssprouts.jpg', 10, 10, 2),
 	('Cucumber', '../../assets/img/vegetables/cucumber.jpg', 3, 10, 2),
 	('Zucchini', '../../assets/img/vegetables/zucchini.jpg', 6.5, 10, 2),
 	('Potato', '../../assets/img/vegetables/potatoes.jpg', 2, 10, 2),

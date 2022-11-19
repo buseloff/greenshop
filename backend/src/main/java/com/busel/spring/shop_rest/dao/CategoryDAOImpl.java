@@ -16,8 +16,9 @@ public class CategoryDAOImpl implements CategoryDAO {
     @Override
     public List<Category> getAllCategories() {
         Session session = sessionFactory.getCurrentSession();
-        List<Category> allCategories = session.createQuery("from Category"
+        List<Category> allCategories = session.createQuery("SELECT new Category (id ,title) from Category"
                 , Category.class).getResultList();
+        allCategories.forEach(category ->  category.setProducts(getCategory(category.getId()).getProducts()));
         return allCategories;
     }
 
