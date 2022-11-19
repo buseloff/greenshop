@@ -6,7 +6,6 @@ export const getShopDataFromDB = async () => {
 };
 
 export const convertShopDataToMap = collection => {
-  console.log(collection);
   const transformedCollection = collection.data.map(item => {
     const { title, products } = item;
     return {
