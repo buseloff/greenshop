@@ -5,14 +5,15 @@ import {
   addItem,
   removeItem
 } from '../../redux/cart/cart.actions';
+import * as Img from '../../assets/img/images';
 import './checkout-item.styles.scss';
 
 const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
-  const { name, imageUrl, price, quantity } = cartItem;
+  const { name, price, quantity } = cartItem; //imageUrl
   return (
     <div className='checkout-item'>
       <div className='image-container'>
-        <img src={imageUrl} alt='item' />
+        <img src={Img[name]} alt='item' />
       </div>
       <span className='name'>{name}</span>
       <span className='quantity'>
